@@ -1,0 +1,417 @@
+<!--Start HTML document-->
+
+<!DOCTYPE html>
+<!--HTML-->
+<html lang="en">
+<!--Head-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Page title-->
+    <title>Dashboard - Neesoft</title>
+    <!--Browser navbar color (#5c6bc0: indigo lighten-1) for mobile-->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#5c6bc0">
+    <meta name="msapplication-navbutton-color" content="#5c6bc0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#5c6bc0">
+    <link href="assets/images/favicon.png" type="image/png" rel="icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- ================================================
+    CSS
+    ================================================ -->
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/prism.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/helper.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/default.css" />
+
+
+</head>
+<!-- End head-->
+<!--body-->
+
+<body>
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Neesoft body-->
+    <div class="ui-app">
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+        <!--Neesoft body page wrapper -->
+        <div class="ui-app__wrapper" id="app-layout-control">
+
+            <!-- ////////////////s//////////////////////////////////////////////////////////// -->
+            <!--prepage loader-->
+            <div id="prepage-loader">
+                <div class="ui-app__prepage-loader spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+            <!-- End prepage loader-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- /////////////////////////////////////////////////////////////////// -->
+            <!--navbar/header-->
+            <div class="navbar-fixed">
+                <nav class="ui-app__wrapper__navbar">
+                    <div class="nav-wrapper">
+
+                        <!-- //////////////////////////////////////////////////////// -->
+                        <!-- navbar left side  -->
+                        <div class="ui-app__wrapper__navbar__leftside--icons">
+
+                            <!-- left sidenav toggle button(show and hide sidenav) -->
+                            <div class="left ui-app__wrapper__navbar__leftside--icons__sidenav--toggle ui-app__wrapper__navbar__leftside--icon__item" data-target="ui-app__left-sidenav-slide-out" id="left-sidenav-toggle">
+                                <i class="material-icons">menu</i>
+                            </div>
+
+                            <!-- Neesoft app/brand title -->
+                            <a href="dashboard.html" class="brand-logo ui-app__wrapper__navbar__leftside--icon__item">Neesoft</a>
+
+                            <!-- left sidenav toggle button(small and large sidenav) -->
+                            <div class="ui-app__wrapper__navbar__leftside--icons__sidenav-small--toggle hide-on-med-and-down ui-app__wrapper__navbar__leftside--icon__item" id="left-sidenav-small-toggle">
+                                <i class="material-icons">radio_button_checked</i>
+                            </div>
+                        </div>
+                        <!-- End navbar left side  -->
+
+                        <!--Search box-->
+                        <div class="ui-app__wrapper__navbar__leftside__search hide-on-med-and-down">
+                            <!-- Search form -->
+                            <form action="#">
+                                <div class="input-field">
+                                    <!--Search input-->
+                                    <input id="search" type="search" autocomplete="off" placeholder="Search pages here!">
+                                    <!--End Search input-->
+                                    <!--Search icon-->
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <!--End Search icon-->
+                                </div>
+                            </form>
+                            <!-- End Search form -->
+                        </div>
+                        <!--End Search box-->
+
+                        <!-- navbar right side  -->
+                        <div class="ui-app__wrapper__navbar__rightside--icons right">
+                            <!-- navbar menu list -->
+                            <ul>
+                                <!-- refresh/reload page button -->
+                                <li class="ui-app__wrapper__navbar__rightside--icons__item hide-on-small-only" id="app-page-refresh"><i class="material-icons">refresh</i></li>
+                                <li class="ui-app__wrapper__navbar__rightside--icons__item ui-app__wrapper__navbar__rightside--notifications notification-badge" data-target='dropdown-notifications-target' data-notifications="4"><i class="material-icons">notifications</i></li>
+                                <li class="ui-app__wrapper__navbar__rightside--users ui-app__wrapper__navbar__rightside--icons__item" data-target="dropdown-user-profile-target">
+                                    M
+                                </li>
+
+                            </ul>
+                            <!-- full menu dropdown structure --
+
+                            <!-- User profile dropdown structure -->
+                            <div id="dropdown-user-profile-target" class="ui-app__wrapper__navbar__rightside--users__dropdown dropdown-content">
+                                <ul>
+                                    <li><a href="#!"><i class="material-icons">perm_identity</i>My Profile</a></li>
+                                    <li><a href="javascript:void(0)" class="toggle-right-sidenav"><i class="material-icons">settings</i>Page Customizer</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="lock.html"><i class="material-icons">lock</i>Lock</a></li>
+                                    <li><a href="signup.html"><i class="material-icons">power_settings_new</i>Logout</a></li>
+                                </ul>
+                            </div>
+                            <!-- End user profile dropdown structure -->
+                            <!-- Notifications dropdown structure -->
+                            <div id="dropdown-notifications-target" class="ui-app__wrapper__navbar__rightside--notifications__dropdown dropdown-content">
+                                <ul class="collection">
+                                    <li class="collection-item avatar"> <img src="assets/images/user1.jpg" alt="user profile picture" class="circle"> <span class="title">Brunch this weekend?</span>
+                                        <p>Ali Connors <span class="body-1">&mdash; I'll be in your neighborhood doing errands this weekend.</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user2.jpg" alt="user profile picture" class="circle"> <span class="title">Oui oui</span>
+                                        <p>Sandra Adams <span class="body-1">&mdash; Do you have Paris recommendations? Have you ever been?</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user3.jpg" alt="user profile picture" class="circle"> <span class="title">Birthday gift</span>
+                                        <p>Trevor Hansen <span class="body-1">&mdash; Have any ideas about what we should get Heidi for her birthday?</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user4.jpg" alt="user profile picture" class="circle"> <span class="title">Recipe to try</span>
+                                        <p>Britta Holt <span class="body-1">&mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End notifications dropdown structure -->
+
+                        </div>
+                        <!-- End navbar left side  -->
+                    </div>
+
+                </nav>
+            </div>
+            <!--End navbar/header-->
+
+            <!--Left sidenav/sidebar-->
+            <aside class="ui-app__left-sidenav sidenav sidenav-fixed" id="ui-app__left-sidenav-slide-out">
+                <!-- sidenav menu list -->
+                <ul>
+                    <!-- sidenav main menu list -->
+                    <li>
+                        <ul class="ui-app__left-sidenav__menu collapsible collapsible-accordion ui-app__scrollbar">
+                            <li>
+                                <a class="collapsible-header"><i class="material-icons left">insert_chart</i>Dashboard<i class="material-icons right">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="login.html" class="waves-effect waves-default">Login</a></li>
+                                        <li><a href="form-layouts.html" class="waves-effect waves-default">Form Layouts</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header"><i class="material-icons left">border_all</i>Tables<i class="material-icons right">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="data-table.html" class="waves-effect waves-default">Data Tables</a></li>
+										 <li><a href="default-table.html" class="waves-effect waves-default">Default Tables</a></li>
+                                        <li><a href="data-table-edit.html" class="waves-effect waves-default">Edit Data Tables</a></li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <!--end sidenav main menu list -->
+                </ul>
+                <!-- end sidenav menu list -->
+            </aside>
+            <!--End Left sidenav/sidebar-->
+            <!--Page Body-->
+            <main>
+
+                <!-- Page content -->
+                <div class="row">
+                    <!-- Analytics Header -->
+
+                    <div class="col s12 m6 l3">
+                        <div class="card ui-app__page-content">
+                            <div class="card-content ui-app__page-content__analytics">
+
+                                <div class="card-body">
+                                    <div class="ui-app__page-content__analytics--data">
+                                        <div class="right"><i class="material-icons ">supervised_user_circle</i>
+                                        </div>
+                                        <h3 class="headline">678450</h3>
+                                        <div class="text-muted">Visitors online</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l3">
+                        <div class="card ui-app__page-content">
+                            <div class="card-content ui-app__page-content__analytics">
+
+                                <div class="card-body">
+                                    <div class="ui-app__page-content__analytics--data">
+                                        <div class="right"><i class="material-icons ">monetization_on</i>
+                                        </div>
+                                        <h3 class="headline">5698</h3>
+                                        <div class="text-muted">Total Sales</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l3">
+                        <div class="card ui-app__page-content">
+                            <div class="card-content ui-app__page-content__analytics ">
+
+                                <div class="card-body">
+                                    <div class="ui-app__page-content__analytics--data">
+                                        <div class="right"><i class="material-icons ">library_books</i>
+                                        </div>
+                                        <h3 class="headline">560</h3>
+                                        <div class="text-muted">Total Projects</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l3">
+                        <div class="card ui-app__page-content">
+                            <div class="card-content ui-app__page-content__analytics">
+
+                                <div class="card-body">
+                                    <div class="ui-app__page-content__analytics--data">
+                                        <div class="right"><i class="material-icons ">attach_money</i>
+                                        </div>
+                                        <h3 class="headline">56980</h3>
+                                        <div class="text-muted">Today Income</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Analytics Header -->
+
+                    <!-- sales chart -->
+                    <div class="col s12">
+
+                        <div class="card ui-app__page-content">
+                            <div class="card-content">
+                                <!-- title -->
+                                <div class="card-title headline">Analytics report</div>
+
+                                <div class="card-body">
+                                    <div style="min-height: 375px">
+                                        <canvas id="dashboard-analytics-report-chart"></canvas>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- sales chart -->
+
+                </div>
+                <!--End Page content -->
+
+            </main>
+            <!--End page body-->
+
+            <!--Footer-->
+            <footer class="page-footer">
+                <div class="footer-copyright white grey-text">
+                    &copy; 2021 Neesoft
+                </div>
+            </footer>
+            <!--End footer-->
+
+        </div>
+        <!-- End body page wrapper -->
+    </div>
+
+    <!-- End Neesoft body -->
+    <!--  Scripts-->
+
+    <!-- Import jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/search.js"></script>
+
+    <!-- charts script (Only use for demo purpose) -->
+    <script>
+        // Analytics report
+        var ctx = document.getElementById('dashboard-analytics-report-chart').getContext('2d');
+
+        var dashboardAnalyticsReportChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Visitors online",
+                    borderColor: '#4db6ac',
+                    pointBackgroundColor: '#4db6ac',
+                    pointRadius: 0,
+                    backgroundColor: '#4db6ac',
+                    legendColor: '#4db6ac',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [154, 184, 175, 203, 210, 231, 240, 278, 252, 312, 320, 374]
+                }, {
+                    label: "Total Sales",
+                    borderColor: '#64b5f6',
+                    pointBackgroundColor: '#64b5f6',
+                    pointRadius: 0,
+                    backgroundColor: '#64b5f6',
+                    legendColor: '#64b5f6',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [256, 230, 245, 287, 240, 250, 230, 295, 331, 431, 456, 521]
+                }, {
+                    label: "Total Projects",
+                    borderColor: '#4dd0e1',
+                    pointBackgroundColor: '#4dd0e1',
+                    pointRadius: 0,
+                    backgroundColor: '#4dd0e1',
+                    legendColor: '#4dd0e1',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
+                }, {
+                    label: "Today Income",
+                    borderColor: '#ba68c8',
+                    pointBackgroundColor: '#ba68c8',
+                    pointRadius: 0,
+                    backgroundColor: '#ba68c8',
+                    legendColor: '#ba68c8',
+                    fill: true,
+                    borderWidth: 2,
+                    data: [592, 680, 739, 558, 638, 499, 380, 734, 568, 610, 780, 910]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: true
+                },
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
+                },
+                layout: {
+                    padding: {
+                        left: 5,
+                        right: 5,
+                        top: 15,
+                        bottom: 15
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontStyle: "500",
+                            beginAtZero: false,
+                            maxTicksLimit: 5,
+                            padding: 10
+                        },
+                        gridLines: {
+                            drawTicks: false,
+                            display: false
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            zeroLineColor: "transparent"
+                        },
+                        ticks: {
+                            padding: 10,
+                            fontStyle: "500"
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <!--End scripts-->
+</body>
+<!--End body-->
+</html>
+<!--End HTML-->

@@ -1,0 +1,894 @@
+<!--Start HTML document-->
+
+<!DOCTYPE html>
+<!--HTML-->
+<html lang="en">
+<!--Head-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Page title-->
+    <title>Table - Neesoft</title>
+    <!--Browser navbar color (#5c6bc0: indigo lighten-1) for mobile-->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#5c6bc0">
+    <meta name="msapplication-navbutton-color" content="#5c6bc0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#5c6bc0">
+    <link href="assets/images/favicon.png" type="image/png" rel="icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- ================================================
+    CSS
+    ================================================ -->
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/prism.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/helper.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/responsive.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/default.css" />
+
+
+</head>
+<!-- End head-->
+<!--body-->
+
+<body>
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!--Neesoft body-->
+    <div class="ui-app">
+
+        <!-- //////////////////////////////////////////////////////////////////////////// -->
+        <!--Neesoft body page wrapper -->
+        <div class="ui-app__wrapper" id="app-layout-control">
+
+            <!-- ////////////////s//////////////////////////////////////////////////////////// -->
+            <!--prepage loader-->
+            <div id="prepage-loader">
+                <div class="ui-app__prepage-loader spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+            <!-- End prepage loader-->
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- /////////////////////////////////////////////////////////////////// -->
+            <!--navbar/header-->
+            <div class="navbar-fixed">
+                <nav class="ui-app__wrapper__navbar">
+                    <div class="nav-wrapper">
+
+                        <!-- //////////////////////////////////////////////////////// -->
+                        <!-- navbar left side  -->
+                        <div class="ui-app__wrapper__navbar__leftside--icons">
+
+                            <!-- left sidenav toggle button(show and hide sidenav) -->
+                            <div class="left ui-app__wrapper__navbar__leftside--icons__sidenav--toggle ui-app__wrapper__navbar__leftside--icon__item" data-target="ui-app__left-sidenav-slide-out" id="left-sidenav-toggle">
+                                <i class="material-icons">menu</i>
+                            </div>
+
+                            <!-- Neesoft app/brand title -->
+                            <a href="dashboard.html" class="brand-logo ui-app__wrapper__navbar__leftside--icon__item">Neesoft</a>
+
+                            <!-- left sidenav toggle button(small and large sidenav) -->
+                            <div class="ui-app__wrapper__navbar__leftside--icons__sidenav-small--toggle hide-on-med-and-down ui-app__wrapper__navbar__leftside--icon__item" id="left-sidenav-small-toggle">
+                                <i class="material-icons">radio_button_checked</i>
+                            </div>
+                        </div>
+                        <!-- End navbar left side  -->
+
+                        <!--Search box-->
+                        <div class="ui-app__wrapper__navbar__leftside__search hide-on-med-and-down">
+                            <!-- Search form -->
+                            <form action="#">
+                                <div class="input-field">
+                                    <!--Search input-->
+                                    <input id="search" type="search" autocomplete="off" placeholder="Search pages here!">
+                                    <!--End Search input-->
+                                    <!--Search icon-->
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <!--End Search icon-->
+                                </div>
+                            </form>
+                            <!-- End Search form -->
+                        </div>
+                        <!--End Search box-->
+
+                        <!-- navbar right side  -->
+                        <div class="ui-app__wrapper__navbar__rightside--icons right">
+                            <!-- navbar menu list -->
+                            <ul>
+                                <!-- refresh/reload page button -->
+                                <li class="ui-app__wrapper__navbar__rightside--icons__item hide-on-small-only" id="app-page-refresh"><i class="material-icons">refresh</i></li>
+                                <li class="ui-app__wrapper__navbar__rightside--icons__item ui-app__wrapper__navbar__rightside--notifications notification-badge" data-target='dropdown-notifications-target' data-notifications="4"><i class="material-icons">notifications</i></li>
+                                <li class="ui-app__wrapper__navbar__rightside--users ui-app__wrapper__navbar__rightside--icons__item" data-target="dropdown-user-profile-target">
+                                    M
+                                </li>
+
+                            </ul>
+                            <!-- full menu dropdown structure --
+
+                            <!-- User profile dropdown structure -->
+                            <div id="dropdown-user-profile-target" class="ui-app__wrapper__navbar__rightside--users__dropdown dropdown-content">
+                                <ul>
+                                    <li><a href="#!"><i class="material-icons">perm_identity</i>My Profile</a></li>
+                                    <li><a href="javascript:void(0)" class="toggle-right-sidenav"><i class="material-icons">settings</i>Page Customizer</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="lock.html"><i class="material-icons">lock</i>Lock</a></li>
+                                    <li><a href="signup.html"><i class="material-icons">power_settings_new</i>Logout</a></li>
+                                </ul>
+                            </div>
+                            <!-- End user profile dropdown structure -->
+                            <!-- Notifications dropdown structure -->
+                            <div id="dropdown-notifications-target" class="ui-app__wrapper__navbar__rightside--notifications__dropdown dropdown-content">
+                                <ul class="collection">
+                                    <li class="collection-item avatar"> <img src="assets/images/user1.jpg" alt="user profile picture" class="circle"> <span class="title">Brunch this weekend?</span>
+                                        <p>Ali Connors <span class="body-1">&mdash; I'll be in your neighborhood doing errands this weekend.</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user2.jpg" alt="user profile picture" class="circle"> <span class="title">Oui oui</span>
+                                        <p>Sandra Adams <span class="body-1">&mdash; Do you have Paris recommendations? Have you ever been?</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user3.jpg" alt="user profile picture" class="circle"> <span class="title">Birthday gift</span>
+                                        <p>Trevor Hansen <span class="body-1">&mdash; Have any ideas about what we should get Heidi for her birthday?</span></p>
+                                    </li>
+                                    <li class="collection-item avatar"> <img src="assets/images/user4.jpg" alt="user profile picture" class="circle"> <span class="title">Recipe to try</span>
+                                        <p>Britta Holt <span class="body-1">&mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End notifications dropdown structure -->
+
+                        </div>
+                        <!-- End navbar left side  -->
+                    </div>
+
+                </nav>
+            </div>
+            <!--End navbar/header-->
+
+            <!--Left sidenav/sidebar-->
+            <aside class="ui-app__left-sidenav sidenav sidenav-fixed" id="ui-app__left-sidenav-slide-out">
+                <!-- sidenav menu list -->
+                <ul>
+                    <!-- sidenav main menu list -->
+                    <li>
+                        <ul class="ui-app__left-sidenav__menu collapsible collapsible-accordion ui-app__scrollbar">
+                            <li>
+                                <a class="collapsible-header"><i class="material-icons left">insert_chart</i>Dashboard<i class="material-icons right">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="login.html" class="waves-effect waves-default">Login</a></li>
+                                        <li><a href="form-layouts.html" class="waves-effect waves-default">Form Layouts</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header"><i class="material-icons left">border_all</i>Tables<i class="material-icons right">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="data-table.html" class="waves-effect waves-default">Data Tables</a></li>
+										 <li><a href="default-table.html" class="waves-effect waves-default">Default Tables</a></li>
+										<li><a href="data-table-edit.html" class="waves-effect waves-default">Edit Data Tables</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <!--end sidenav main menu list -->
+                </ul>
+                <!-- end sidenav menu list -->
+            </aside>
+            <!--End Left sidenav/sidebar-->
+            <!--Page Body-->
+            <main>
+
+              <!-- Page heading -->
+              <div class="row ui-app__row">
+                  <div class="col s12 ui-app__header">
+                      <!-- title -->
+                      <h1 class="ui-app__header__title display-1">Data Tables</h1>
+                      <!-- bookmark -->
+                      <a href="https://datatables.net/" target="_blank" class="ui-app__header__bookmark"><i class="material-icons">bookmark</i></a>
+                      <!-- sub heading -->
+                      <p class="ui-app__header__body subheading">
+                          <a href="https://datatables.net/" target="_blank">DataTables</a> is a plug-in for the <a href="https://jquery.com/" target="_blank">jQuery</a> Javascript library. It is a highly flexible tool, based upon the foundations of
+                          progressive enhancement, and will add advanced interaction controls to any HTML table.</p>
+
+                  </div>
+              </div>
+              <!-- End page heading -->
+
+              <!-- Page content -->
+              <div class="row">
+
+                  <!-- Basic -->
+                  <div class="col s12">
+                      <div class="card ui-app__page-content">
+                          <div class="card-content">
+                              <div class="card-title headline">Basic DataTable</div>
+
+                              <div class="card-body">
+
+                                  <table id="example" class="display" style="width:100%">
+                                      <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Age</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>Tiger Nixon</td>
+                                              <td>System Architect</td>
+                                              <td>Edinburgh</td>
+                                              <td>61</td>
+                                              <td>2011/04/25</td>
+                                              <td>$320,800</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Garrett Winters</td>
+                                              <td>Accountant</td>
+                                              <td>Tokyo</td>
+                                              <td>63</td>
+                                              <td>2011/07/25</td>
+                                              <td>$170,750</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Ashton Cox</td>
+                                              <td>Junior Technical Author</td>
+                                              <td>San Francisco</td>
+                                              <td>66</td>
+                                              <td>2009/01/12</td>
+                                              <td>$86,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Cedric Kelly</td>
+                                              <td>Senior Javascript Developer</td>
+                                              <td>Edinburgh</td>
+                                              <td>22</td>
+                                              <td>2012/03/29</td>
+                                              <td>$433,060</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Airi Satou</td>
+                                              <td>Accountant</td>
+                                              <td>Tokyo</td>
+                                              <td>33</td>
+                                              <td>2008/11/28</td>
+                                              <td>$162,700</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Brielle Williamson</td>
+                                              <td>Integration Specialist</td>
+                                              <td>New York</td>
+                                              <td>61</td>
+                                              <td>2012/12/02</td>
+                                              <td>$372,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Herrod Chandler</td>
+                                              <td>Sales Assistant</td>
+                                              <td>San Francisco</td>
+                                              <td>59</td>
+                                              <td>2012/08/06</td>
+                                              <td>$137,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Rhona Davidson</td>
+                                              <td>Integration Specialist</td>
+                                              <td>Tokyo</td>
+                                              <td>55</td>
+                                              <td>2010/10/14</td>
+                                              <td>$327,900</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Colleen Hurst</td>
+                                              <td>Javascript Developer</td>
+                                              <td>San Francisco</td>
+                                              <td>39</td>
+                                              <td>2009/09/15</td>
+                                              <td>$205,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Sonya Frost</td>
+                                              <td>Software Engineer</td>
+                                              <td>Edinburgh</td>
+                                              <td>23</td>
+                                              <td>2008/12/13</td>
+                                              <td>$103,600</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jena Gaines</td>
+                                              <td>Office Manager</td>
+                                              <td>London</td>
+                                              <td>30</td>
+                                              <td>2008/12/19</td>
+                                              <td>$90,560</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Dai Rios</td>
+                                              <td>Personnel Lead</td>
+                                              <td>Edinburgh</td>
+                                              <td>35</td>
+                                              <td>2012/09/26</td>
+                                              <td>$217,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jenette Caldwell</td>
+                                              <td>Development Lead</td>
+                                              <td>New York</td>
+                                              <td>30</td>
+                                              <td>2011/09/03</td>
+                                              <td>$345,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Yuri Berry</td>
+                                              <td>Chief Marketing Officer (CMO)</td>
+                                              <td>New York</td>
+                                              <td>40</td>
+                                              <td>2009/06/25</td>
+                                              <td>$675,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Caesar Vance</td>
+                                              <td>Pre-Sales Support</td>
+                                              <td>New York</td>
+                                              <td>21</td>
+                                              <td>2011/12/12</td>
+                                              <td>$106,450</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Doris Wilder</td>
+                                              <td>Sales Assistant</td>
+                                              <td>Sidney</td>
+                                              <td>23</td>
+                                              <td>2010/09/20</td>
+                                              <td>$85,600</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Angelica Ramos</td>
+                                              <td>Chief Executive Officer (CEO)</td>
+                                              <td>London</td>
+                                              <td>47</td>
+                                              <td>2009/10/09</td>
+                                              <td>$1,200,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Gavin Joyce</td>
+                                              <td>Developer</td>
+                                              <td>Edinburgh</td>
+                                              <td>42</td>
+                                              <td>2010/12/22</td>
+                                              <td>$92,575</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jennifer Chang</td>
+                                              <td>Regional Director</td>
+                                              <td>Singapore</td>
+                                              <td>28</td>
+                                              <td>2010/11/14</td>
+                                              <td>$357,650</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Brenden Wagner</td>
+                                              <td>Software Engineer</td>
+                                              <td>San Francisco</td>
+                                              <td>28</td>
+                                              <td>2011/06/07</td>
+                                              <td>$206,850</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Fiona Green</td>
+                                              <td>Chief Operating Officer (COO)</td>
+                                              <td>San Francisco</td>
+                                              <td>48</td>
+                                              <td>2010/03/11</td>
+                                              <td>$850,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Shou Itou</td>
+                                              <td>Regional Marketing</td>
+                                              <td>Tokyo</td>
+                                              <td>20</td>
+                                              <td>2011/08/14</td>
+                                              <td>$163,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Michelle House</td>
+                                              <td>Integration Specialist</td>
+                                              <td>Sidney</td>
+                                              <td>37</td>
+                                              <td>2011/06/02</td>
+                                              <td>$95,400</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Suki Burks</td>
+                                              <td>Developer</td>
+                                              <td>London</td>
+                                              <td>53</td>
+                                              <td>2009/10/22</td>
+                                              <td>$114,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Prescott Bartlett</td>
+                                              <td>Technical Author</td>
+                                              <td>London</td>
+                                              <td>27</td>
+                                              <td>2011/05/07</td>
+                                              <td>$145,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Gavin Cortez</td>
+                                              <td>Team Leader</td>
+                                              <td>San Francisco</td>
+                                              <td>22</td>
+                                              <td>2008/10/26</td>
+                                              <td>$235,500</td>
+                                          </tr>
+
+                                      </tbody>
+                                      <tfoot>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Age</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </tfoot>
+                                  </table>
+
+                              </div>
+
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Basic -->
+
+                  <!-- Page length options -->
+                  <div class="col s12">
+                      <div class="card ui-app__page-content">
+                          <div class="card-content">
+                              <div class="card-title headline">Page length options</div>
+
+                              <div class="card-body">
+
+                                  <table id="example2" class="display" style="width:100%">
+                                      <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Age</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>Tiger Nixon</td>
+                                              <td>System Architect</td>
+                                              <td>Edinburgh</td>
+                                              <td>61</td>
+                                              <td>2011/04/25</td>
+                                              <td>$320,800</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Garrett Winters</td>
+                                              <td>Accountant</td>
+                                              <td>Tokyo</td>
+                                              <td>63</td>
+                                              <td>2011/07/25</td>
+                                              <td>$170,750</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Ashton Cox</td>
+                                              <td>Junior Technical Author</td>
+                                              <td>San Francisco</td>
+                                              <td>66</td>
+                                              <td>2009/01/12</td>
+                                              <td>$86,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Cedric Kelly</td>
+                                              <td>Senior Javascript Developer</td>
+                                              <td>Edinburgh</td>
+                                              <td>22</td>
+                                              <td>2012/03/29</td>
+                                              <td>$433,060</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Airi Satou</td>
+                                              <td>Accountant</td>
+                                              <td>Tokyo</td>
+                                              <td>33</td>
+                                              <td>2008/11/28</td>
+                                              <td>$162,700</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Brielle Williamson</td>
+                                              <td>Integration Specialist</td>
+                                              <td>New York</td>
+                                              <td>61</td>
+                                              <td>2012/12/02</td>
+                                              <td>$372,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Herrod Chandler</td>
+                                              <td>Sales Assistant</td>
+                                              <td>San Francisco</td>
+                                              <td>59</td>
+                                              <td>2012/08/06</td>
+                                              <td>$137,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Rhona Davidson</td>
+                                              <td>Integration Specialist</td>
+                                              <td>Tokyo</td>
+                                              <td>55</td>
+                                              <td>2010/10/14</td>
+                                              <td>$327,900</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Colleen Hurst</td>
+                                              <td>Javascript Developer</td>
+                                              <td>San Francisco</td>
+                                              <td>39</td>
+                                              <td>2009/09/15</td>
+                                              <td>$205,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Sonya Frost</td>
+                                              <td>Software Engineer</td>
+                                              <td>Edinburgh</td>
+                                              <td>23</td>
+                                              <td>2008/12/13</td>
+                                              <td>$103,600</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jena Gaines</td>
+                                              <td>Office Manager</td>
+                                              <td>London</td>
+                                              <td>30</td>
+                                              <td>2008/12/19</td>
+                                              <td>$90,560</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Dai Rios</td>
+                                              <td>Personnel Lead</td>
+                                              <td>Edinburgh</td>
+                                              <td>35</td>
+                                              <td>2012/09/26</td>
+                                              <td>$217,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jenette Caldwell</td>
+                                              <td>Development Lead</td>
+                                              <td>New York</td>
+                                              <td>30</td>
+                                              <td>2011/09/03</td>
+                                              <td>$345,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Yuri Berry</td>
+                                              <td>Chief Marketing Officer (CMO)</td>
+                                              <td>New York</td>
+                                              <td>40</td>
+                                              <td>2009/06/25</td>
+                                              <td>$675,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Caesar Vance</td>
+                                              <td>Pre-Sales Support</td>
+                                              <td>New York</td>
+                                              <td>21</td>
+                                              <td>2011/12/12</td>
+                                              <td>$106,450</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Doris Wilder</td>
+                                              <td>Sales Assistant</td>
+                                              <td>Sidney</td>
+                                              <td>23</td>
+                                              <td>2010/09/20</td>
+                                              <td>$85,600</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Angelica Ramos</td>
+                                              <td>Chief Executive Officer (CEO)</td>
+                                              <td>London</td>
+                                              <td>47</td>
+                                              <td>2009/10/09</td>
+                                              <td>$1,200,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Gavin Joyce</td>
+                                              <td>Developer</td>
+                                              <td>Edinburgh</td>
+                                              <td>42</td>
+                                              <td>2010/12/22</td>
+                                              <td>$92,575</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Jennifer Chang</td>
+                                              <td>Regional Director</td>
+                                              <td>Singapore</td>
+                                              <td>28</td>
+                                              <td>2010/11/14</td>
+                                              <td>$357,650</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Brenden Wagner</td>
+                                              <td>Software Engineer</td>
+                                              <td>San Francisco</td>
+                                              <td>28</td>
+                                              <td>2011/06/07</td>
+                                              <td>$206,850</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Fiona Green</td>
+                                              <td>Chief Operating Officer (COO)</td>
+                                              <td>San Francisco</td>
+                                              <td>48</td>
+                                              <td>2010/03/11</td>
+                                              <td>$850,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Shou Itou</td>
+                                              <td>Regional Marketing</td>
+                                              <td>Tokyo</td>
+                                              <td>20</td>
+                                              <td>2011/08/14</td>
+                                              <td>$163,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Michelle House</td>
+                                              <td>Integration Specialist</td>
+                                              <td>Sidney</td>
+                                              <td>37</td>
+                                              <td>2011/06/02</td>
+                                              <td>$95,400</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Suki Burks</td>
+                                              <td>Developer</td>
+                                              <td>London</td>
+                                              <td>53</td>
+                                              <td>2009/10/22</td>
+                                              <td>$114,500</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Prescott Bartlett</td>
+                                              <td>Technical Author</td>
+                                              <td>London</td>
+                                              <td>27</td>
+                                              <td>2011/05/07</td>
+                                              <td>$145,000</td>
+                                          </tr>
+                                          <tr>
+                                              <td>Gavin Cortez</td>
+                                              <td>Team Leader</td>
+                                              <td>San Francisco</td>
+                                              <td>22</td>
+                                              <td>2008/10/26</td>
+                                              <td>$235,500</td>
+                                          </tr>
+
+                                      </tbody>
+                                      <tfoot>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Age</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </tfoot>
+                                  </table>
+
+                              </div>
+
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Page length options -->
+
+
+                  <!-- Ajax data source (arrays) -->
+                  <div class="col s12">
+                      <div class="card ui-app__page-content">
+                          <div class="card-content">
+                              <div class="card-title headline">Ajax data source (arrays)</div>
+
+                              <div class="card-body">
+
+                                  <table id="example3" class="display" style="width:100%">
+                                      <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Extn.</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </thead>
+                                      <tfoot>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Extn.</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </tfoot>
+                                  </table>
+
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Ajax data source (arrays) -->
+
+
+                  <!-- Row grouping -->
+                  <div class="col s12">
+                      <div class="card ui-app__page-content">
+                          <div class="card-content">
+                              <div class="card-title headline">Row grouping</div>
+
+                              <div class="card-body">
+
+                                  <table id="example4" class="display" style="width:100%">
+                                      <thead>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Extn.</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </thead>
+                                      <tfoot>
+                                          <tr>
+                                              <th>Name</th>
+                                              <th>Position</th>
+                                              <th>Office</th>
+                                              <th>Extn.</th>
+                                              <th>Start date</th>
+                                              <th>Salary</th>
+                                          </tr>
+                                      </tfoot>
+                                  </table>
+
+                              </div>
+
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Row grouping -->
+
+
+              </div>
+              <!--End Page content -->
+
+            </main>
+            <!--End page body-->
+
+            <!--Footer-->
+            <footer class="page-footer">
+                <div class="footer-copyright white grey-text">
+                    &copy; 2021 Neesoft
+                </div>
+            </footer>
+            <!--End footer-->
+
+        </div>
+        <!-- End body page wrapper -->
+    </div>
+
+    <!-- End Neesoft body -->
+    <!--  Scripts-->
+
+    <!-- Import jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/search.js"></script>
+
+    <!-- charts script (Only use for demo purpose) -->
+    <script>
+    $(function() {
+        // Basic Data table
+        $('#example').DataTable();
+        $('#example_length select').formSelect(); // initialize select
+
+        //Page length options
+        $('#example2').DataTable({
+            "lengthMenu": [
+                [5, 10, 20, 30, 40, -1],
+                [5, 10, 20, 30, 40, "All"]
+            ]
+        });
+        $('#example2_length select').formSelect(); // initialize select
+
+        //Ajax data source (arrays)
+        $('#example3').DataTable({
+            "ajax": "assets/arrays.txt"
+        });
+        $('#example3_length select').formSelect(); // initialize select
+
+        //Row grouping Data table example
+        var groupColumn = 2;
+        var table = $('#example4').DataTable({
+            "ajax": "assets/arrays.txt",
+            "columnDefs": [{
+                "visible": false,
+                "targets": groupColumn
+            }],
+            "order": [
+                [groupColumn, 'asc']
+            ],
+            "displayLength": 25,
+            "drawCallback": function(settings) {
+                var api = this.api();
+                var rows = api.rows({
+                    page: 'current'
+                }).nodes();
+                var last = null;
+
+                api.column(groupColumn, {
+                    page: 'current'
+                }).data().each(function(group, i) {
+                    if (last !== group) {
+                        $(rows).eq(i).before(
+                            '<tr class="group"><td colspan="5">' + group + '</td></tr>'
+                        );
+
+                        last = group;
+                    }
+                });
+            }
+        });
+
+        // Order by the grouping
+        $('#example4 tbody').on('click', 'tr.group', function() {
+            var currentOrder = table.order()[0];
+            if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+                table.order([groupColumn, 'desc']).draw();
+            } else {
+                table.order([groupColumn, 'asc']).draw();
+            }
+        });
+
+        $('#example4_length select').formSelect(); // initialize select
+
+    });
+    </script>
+
+    <!--End scripts-->
+</body>
+<!--End body-->
+</html>
+<!--End HTML-->
